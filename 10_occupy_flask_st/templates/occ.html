@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> {{title}} </title>
+  </head>
+
+  <body>
+    <h1> {{heading}} </h1>
+    <!-- Displays a random occupation -->
+    <h2>Random occupation of the day: {{occ}} </h2>
+    <!-- Generates the table with occupations -->
+    <table style = "width:25%">
+    {% for key in dict %}
+    <tr>
+      <td>{{key}}</td>
+      <td>{{dict[key]}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>
