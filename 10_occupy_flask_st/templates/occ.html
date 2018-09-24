@@ -6,14 +6,20 @@
   </head>
 
   <body>
+    <!-- Displays the heading -->
     <h1> {{heading}} </h1>
-    <!-- Displays a random occupation -->
+
+    <!-- Displays a random occupation using code from hw08-->
     <h2>Random occupation of the day: {{occ}} </h2>
-    <!-- Generates the table with occupations -->
+
+    <!-- Generates the table with occupations using dictionary built in ye.py -->
     <table style = "width:25%">
+    <!-- Loops through the dictionary -->
     {% for key in dict %}
     <tr>
+      <!-- Displays the job class -->
       <td>{{key}}</td>
+      <!-- Displays the corresponding percentage for job class -->
       <td>{{dict[key]}}</td>
     </tr>
     {% endfor %}
