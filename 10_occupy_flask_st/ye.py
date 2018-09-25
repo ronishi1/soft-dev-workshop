@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Navigate to the http://127.0.0.1:5000/occupations to see the homework!"
+    return '<a href="/occupations">To the homework</a>'
 
 @app.route("/occupations")
 def occRoute():
