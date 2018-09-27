@@ -9,6 +9,9 @@ def home():
 def auth():
     username = request.args['username']
     method = request.method
+    return render_template('auth.html',
+                            username = username,
+                            method = method)
 
 if __name__ == "__main__":
     app.debug = True
