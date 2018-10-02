@@ -21,15 +21,11 @@ def check_credentials(username,password):
 
 @app.route("/")
 def home():
-    global error
     #if the user is in session, render the welcome page
     if "user" in session:
         return render_template('auth.html',username=session["user"])
-    #resetting error after the message has been stored
-    errorMessage = error
-    error = ""
     #otherwise render the login page, shows an error if bad username/password was inputted
-    return render_template('login.html',errorMessage=errorMessage)
+    return render_template('login.html')
 
 @app.route("/logout")
 def logout():
@@ -41,7 +37,7 @@ def logout():
 @app.route("/auth",methods=["POST"])
 def authenticate():
     #needed to modify the global variable error (to be used in home)
-    global error
+    error = ""
     username = request.form['username']
     password = request.form['password']
     #if the credentials match, add the user to session

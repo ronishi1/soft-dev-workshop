@@ -4,14 +4,11 @@
     <title>Login</title>
   </head>
   <body>
-    <!-- Displays the error message if it exists -->
-    {% if errorMessage %}
-      <strong> Uh oh there was an error, you typed in a {{errorMessage}}</strong>
-      {% endif %}
-
       {% set msgs = get_flashed_messages() %}
       {% for each in msgs %}
-      {{each}}
+      {% if each %}
+      <strong> Uh oh there was an error, you typed in a {{each}}
+	{% endif %}
       {% endfor %}
     <form action="/auth" method="POST">
       <input type="text" name="username" placeholder="Username">
