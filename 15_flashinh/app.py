@@ -1,7 +1,7 @@
 # Ray Onishi, Shafali Gupta - Devo Squad!
 # SoftDev1 pd7
-# K14 -- Do I Know You?
-# 2018-10-01
+# K15 -- Oh yes, perhaps I do…
+# 2018-10-02
 
 from flask import Flask,render_template,session,request,url_for,redirect,flash
 import os
@@ -12,8 +12,6 @@ app.secret_key = os.urandom(32)
 #hardcoded user
 user1 = "tester"
 pass1 = "test"
-
-error = ""
 
 #checks the credentials against the hard coded user
 def check_credentials(username,password):
@@ -36,7 +34,6 @@ def logout():
 
 @app.route("/auth",methods=["POST"])
 def authenticate():
-    #needed to modify the global variable error (to be used in home)
     error = ""
     username = request.form['username']
     password = request.form['password']
@@ -49,8 +46,9 @@ def authenticate():
     #otherwise it has to be a bad password
     else:
         error = "bad password!"
-    #redirecting to home
+    #flashes error
     flash(error)
+    #redirects to home
     return redirect(url_for('home'))
 
 if __name__ == "__main__":
