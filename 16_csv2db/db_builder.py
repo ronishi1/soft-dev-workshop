@@ -24,7 +24,6 @@ def buildTable(file,headers,tableName):
         # turns the headers from a dictionary into a string
         headerInfo += key + " " + headers[key] + ","
     headerInfo = headerInfo[:-1]
-    print(headerInfo)
     c.execute("CREATE TABLE " + tableName + "(" + headerInfo + ")")
     with open(file) as csvfile:
         # read the CSV File
