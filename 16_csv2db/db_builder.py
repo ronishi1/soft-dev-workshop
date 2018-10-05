@@ -9,7 +9,7 @@ import csv       #facilitates CSV I/O
 db = sqlite3.connect("discobandit.db")
 c = db.cursor()
 
-peeps = {"name":"TEXT","age":"INTEGER","id":"INTEGER    "}
+peeps = {"name":"TEXT","age":"INTEGER","id":"INTEGER"}
 occupations = {"Job Class":"TEXT","Percentage":"INTEGER"}
 courses = {"code":"TEXT","mark":"INTEGER","id":"INTEGER"}
 
