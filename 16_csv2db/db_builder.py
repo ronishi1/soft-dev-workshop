@@ -1,30 +1,41 @@
 #Ray Onishi & Amit Narang - Snakes
 #SoftDev1 pd7
-#SQLITE3 BASICS
+#K16 -- No trouble
 #2018-10-04
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitates CSV I/O
 
-db = sqlite3.connect("basicPeeps.db")
+db = sqlite3.connect("discobandit.db")
 c = db.cursor()
 
-c.execute("CREATE TABLE snakes (name TEXT, age INTEGER, id INTEGER PRIMARY KEY)")
+peeps = {"name":"TEXT","age":"INTEGER","id":"INTEGER    "}
+occupations = {"Job Class":"TEXT","Percentage":"INTEGER"}
+courses = {"code":"TEXT","mark":"INTEGER","id":"INTEGER"}
 
+def buildTable(file,headers,tableName):
+    headerInfo = ""
+    for key in headers:
+        headerInfo += key + " " + headers[key] + ","
+    headerInfo = headerInfo[:-1]
+    print(headerInfo)
+    c.execute("CREATE TABLE " + tableName + "(" + headerInfo + ")")
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            cmd = "("
+            for key in headers:
+                if headers[key] == "TEXT":
+                    cmd += "\"" + row[key] + "\","
+                else:
+                    cmd += row[key] + ","
+            cmd = cmd[:-1]
+            cmd += ")"
+            c.execute("INSERT INTO " + tableName + " VALUES" + cmd)
 
-with open('peeps.csv') as csvfile:
-    reader = csv.DictReader(csvfile)
-    s = "INSERT INTO snakes VALUES("
-    for row in reader:
-        cpS = s
-        cpS += str(row['name'])
-        cpS += ","
-        cpS += row['age']
-        cpS += ","
-        cpS += row['id']
-        cpS += ")"
-        c.execute(cpS)
+buildTable('peeps.csv',peeps,"peeps")
+buildTable('occupations.csv',occupations,"occupations")
+buildTable('courses.csv',courses,"courses")
 
-        
 db.commit() #save changes
 db.close()  #close database
