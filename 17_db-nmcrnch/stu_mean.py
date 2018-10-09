@@ -77,17 +77,16 @@ def displayInfo():
         string += "\nID: " + str(student["id"])
         string += "\nAverage: " + str(student["avg"])
         string += "\n********************"
-        #print(string)
+        print(string)
 
 #==========================================================
 # Create a table of IDs and associated averages, named "peeps_avg"
 def createTable():
     peepsInfo = makeInfoArray()
     # creates the table named peeps_avg
-    # c.execute( "CREATE TABLE peeps_avg(userid INTEGER, average REAL)")
+    c.execute( "CREATE TABLE peeps_avg(userid INTEGER, average REAL)")
     # goes through peepsInfo and adds
     for student in peepsInfo:
-        print (student)
         command = "INSERT INTO peeps_avg (userid, average) VALUES (?, ?)"
         values = [(student["id"], student["avg"])]
         c.executemany(command, values)
