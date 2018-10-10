@@ -24,12 +24,13 @@ text_factory = bytes
 # Create a table of IDs and associated averages, named "peeps_avg"
 # Facilitate adding rows to the courses table
 
+
 # Look up the grades of a student with their id as studentid
 def lookAtGrade(studentid):
     studentinfo = {}
+    key = studentid
     grades = c.execute("SELECT peeps.id, courses.mark FROM courses, peeps WHERE courses.id = peeps.id and peeps.id = " + str(studentid))
     for row in grades:
-        key = studentid
         studentinfo.setdefault(key, [])
         studentinfo[key].append(row[1])
     return studentinfo[key]
@@ -37,10 +38,12 @@ def lookAtGrade(studentid):
 # creates a dictionary with the studentid as the key and their averages as the value
 def makeAverage():
     avg={}
-    c=db.cursor()
-    allPeeps = c.execute("SELECT peeps.id FROM peeps")
-    for row in allPeeps:
-        avg[row[0]] = getAverage(lookAtGrade(row[0]))
+    # The two lines below are a work around for an issue we faced.
+    # When we tried allpeeps = c.execute("SELECT peeps.id FROM peeps") and iterated through it,
+    # it only returned the first id from the first row
+    allPeeps = c.execute("SELECT COUNT(id) FROM peeps")
+    for i in range(1,allPeeps.fetchone()[0]+1):
+        avg[i] = getAverage(lookAtGrade(i))
     return avg
 
 # computes the average of a list rounded to two decimal places
@@ -90,20 +93,13 @@ def createTable():
         command = "INSERT INTO peeps_avg (userid, average) VALUES (?, ?)"
         values = [(student["id"], student["avg"])]
         c.executemany(command, values)
-        #addRows("peeps_avg", student["id"], student["avg"] )
-
-
-# def addRows(table_name, id, avg):
-#     command = "INSERT INTO " + table_name + "(userid, average) VALUES (?,?)"
-#     values = [(id, avg)]
-#     c.executemany(command, values)
 
 def addCRows(code, mark, id):
     command = "INSERT INTO courses (code, mark, id) VALUES (?,?,?)"
     values = [(code, mark, id)]
     c.executemany(command, values)
 
-
+# testing everything!
 displayInfo()
 createTable()
 addCRows('systems', 66, 11)
