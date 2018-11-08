@@ -2,6 +2,12 @@
 <html>
 <head>
   <title>Ray</title>
+  <style>
+  .fix{
+    padding-top: 45px;
+    margin-top: -45px
+  }
+  </style>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
@@ -14,23 +20,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#navbar">Navbar</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#form">Form</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#grid">Grid</a>
         </li>
         <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            References
+            More things!
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Navbar</a>
-            <a class="dropdown-item" href="#">Jumbotron</a>
-            <a class="dropdown-item" href="#">Grid</a>
+            <a class="dropdown-item" href="#">Woah?</a>
+            <a class="dropdown-item" href="#">Hi</a>
+            <a class="dropdown-item" href="#">There</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
     </div>
@@ -44,48 +50,142 @@
       <h1 class="display-4">Look at that cool navbar!</h1>
       <p class="lead">There are some cool features on this website. Bootstrap has a lot of cool stuff like that navbar above. What you have here is called a jumbotron.</p>
       <hr class="my-4">
-      <p>It also has grid which is used to create responsive websites! Try changing around the size of the website and see how the cards at the bottom of the website scales!</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <p>Read below to get an insight to some of the key components of Bootstrap! You can also use the navbar above to jump to any part of the website!</p>
+      <a class="btn btn-primary btn-lg" href="#navbar" role="button">Learn more</a>
     </div>
-</div>
+  </div>
 
-  <div class="container">
-    <h1 class="display-4">Navbar</h1>
-    <p class="lead">
-      The navbar at the top of the page
+  <div class="container" id="navbar">
+    <h1 class="display-4 fix">Navbar</h1>
+    <p>
+      The navbar component of Bootstrap is used to create the navbar above. The nav component itself has multiple sub-components, for example in the navbar above we used:
+      <br>
+      <ul>
+        <li> <code>.fixed-top</code> </li>
+        <li> <code>.navbar-dark</code> </li>
+        <li> <code>.bg-dark</code></li>
+      </ul>
+      <a href="https://getbootstrap.com/docs/4.1/components/navbar/">Navbar documentation</a>
     </p>
   </div>
 
-    <div class="container">
+  <div class="container" id="form">
+    <h1 class="display-4 fix">Forms</h1>
+    <p>
+      Another useful component of Bootstrap is form! It is a styled version of the plain html form and looks a lot cleaner and aesthetic.
+      <br>
+    </p>
+    <form>
+      <div class="form-group">
+        <label>Text</label>
+        <input type="email" class="form-control" placeholder="Enter text">
+        <small class="form-text text-muted">You can also have small text below the form!</small>
+      </div>
+      <div class="form-group">
+        <label>Text of type password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <small class="form-text text-muted">The input above demonstrates how type password works!</small>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input">
+        <label class="form-check-label">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Primary Button</button>
+    </form>
+    <a href="https://getbootstrap.com/docs/4.1/components/forms/">Form documentation</a>
+  </div>
+
+  <br>
+
+  <div class="container" id="grid">
+    <h1 class="display-4 fix">Grid</h1>
+    <p>
+      <blockquote class="blockquote">
+        <p class="mb-0">Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive.</p>
+        <footer class="blockquote-footer">Bootstrap Website</footer>
+      </blockquote>
+      Grid is a key feature of Bootstrap used to create responsive websites that scale on all screen sizes. The screen is split into 12 columns, and you can set how many of those columns
+      something will take at certain sizes. For instance, if you have 3 cards like below, you will likely want to only show one card taking up all 12 columns on mobile or else
+      it would try to squish 3 cards in a tiny window.
+      Take a look at the examples below to see how it works!
+      <br>
+      <a href="https://getbootstrap.com/docs/4.1/layout/grid/">Grid documentation</a>
+    </p>
+  </div>
+
+  <br>
+  <div class="container" align="center">
+    <h5> Example 1 of Grid </h5>
+    <h6> Right now, on a full screen, all three cards will be on the same row (each card 4 columns). But if you scale it down, it will show two cards per row (each card 6 columns), then once small enough one card per row (each card 12 columns). </h6>
+    <br>
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" style="width: 25rem;">
+        <div class="card" style="width: 20rem;">
           <img class="card-img-top" src="https://www.geekalerts.com/u/Star-Wars-The-Force-Awakens-Chibi-Prints-4-Pack-Poe-Dameron.png" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">One</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary disabled">Go somewhere</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" style="width: 25rem;">
+        <div class="card" style="width: 20rem;">
           <img class="card-img-top" src="https://www.geekalerts.com/u/Star-Wars-The-Force-Awakens-Chibi-Prints-4-Pack-Poe-Dameron.png" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Two</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary disabled">Go somewhere</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" style="width: 25rem;">
+        <div class="card" style="width: 20rem;">
           <img class="card-img-top" src="https://www.geekalerts.com/u/Star-Wars-The-Force-Awakens-Chibi-Prints-4-Pack-Poe-Dameron.png" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Three</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary disabled">Go somewhere</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container" align="center">
+    <h5> Example 2 of Grid </h5>
+    <h6> Starts with 6 per row (each 2 columns), then as you scale down, it becomes 2 per row (each 6 columns) then 1 per row (each 12 columns) </h6>
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-2">
+        <div class="alert alert-dark" role="alert">
+          One
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-2">
+        <div class="alert alert-dark" role="alert">
+          Two
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-2">
+        <div class="alert alert-dark" role="alert">
+          Three
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-2">
+        <div class="alert alert-dark" role="alert">
+          Four
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-2">
+        <div class="alert alert-dark" role="alert">
+          Five
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-2">
+        <div class="alert alert-dark" role="alert">
+          Six
         </div>
       </div>
     </div>
