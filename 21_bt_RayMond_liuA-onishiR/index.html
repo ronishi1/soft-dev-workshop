@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ray</title>
+  <title>Meet Bootstrap!</title>
   <style>
   .fix{
     padding-top: 45px;
@@ -51,7 +51,53 @@
       <p class="lead">There are some cool features on this website. Bootstrap has a lot of cool stuff like that navbar above. What you have here is called a jumbotron.</p>
       <hr class="my-4">
       <p>Read below to get an insight to some of the key components of Bootstrap! You can also use the navbar above to jump to any part of the website!</p>
-      <a class="btn btn-primary btn-lg" href="#navbar" role="button">Learn more</a>
+
+      <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Navbar Code</a>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Jumbotron Code</button>
+      </p>
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+              <pre><code class="language-html" data-lang="html">
+                <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Navbar<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#navbarSupportedContent"</span> <span class="na">aria-controls=</span><span class="s">"navbarSupportedContent"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span>
+                  <span class="na">aria-label=</span><span class="s">"Toggle navigation"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+                  <span class="nt">&lt;/button&gt;</span>
+
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"navbarSupportedContent"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav mr-auto"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+                      <span class="nt">&lt;/li&gt;</span>
+                      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+                      <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;/ul&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/nav&gt;</span></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+              <pre><code class="language-html" data-lang="html">
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jumbotron"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"display-4"</span><span class="nt">&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+                  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"lead"</span><span class="nt">&gt;</span>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.<span class="nt">&lt;/p&gt;</span>
+                  <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"my-4"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-lg"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Learn more<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -90,7 +136,33 @@
         <input type="checkbox" class="form-check-input">
         <label class="form-check-label">Check me out</label>
       </div>
-      <button type="submit" class="btn btn-primary">Primary Button</button>
+      <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Simple Code for a Form
+        </a>
+        <small class="form-text text-muted"> The code shown if you press the button is the same as the form above! It is taken from the Bootstrap website </small>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <pre>
+            <code class="language-html" data-lang="html">
+              <span class="nt">&lt;form&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail1"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+                  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputEmail1"</span> <span class="na">aria-describedby=</span><span class="s">"emailHelp"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;small</span> <span class="na">id=</span><span class="s">"emailHelp"</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>We'll never share your email with anyone else.<span class="nt">&lt;/small&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputPassword1"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+                  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputPassword1"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;/form&gt;</span>
+            </code>
+          </pre>
+        </div>
+      </div>
     </form>
     <a href="https://getbootstrap.com/docs/4.1/components/forms/">Form documentation</a>
   </div>
@@ -194,6 +266,14 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <footer class="footer navbar-fixed-bottom bg-dark">
+    <div class="container">
+      <center><p class="footer-copyright text-center py-3 text-white" style="margin: 20px;">© 2018 RayMond <span class="glyphicon glyphicon-copyright-mark"></span> 2018</p></center>
+    </div>
+  </footer>
+
+
 </body>
 
 </html>
