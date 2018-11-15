@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESTing up!</title>
+</head>
+<body>
+	<h1>A Bunch of Countries from the EU!</h1>
+	<h3> But first... dog of the day </h3>
+	<img src="{{dog['message']}}">
+	<hr>
+	<h2> Random country of the day: {{ rCountry['name']}} </h2>
+	<p>
+		Some cool stuff about {{ rCountry['name']}}!
+		<br>
+		<br>
+		The sunrise/sunset data may not be 100% accurate so beware!
+		<br>
+		The sunrise is at <strong> {{rCountry['sunData']['results']['sunrise']}} </strong>.
+		<br>
+		The sunset is at <strong> {{rCountry['sunData']['results']['sunset']}} </strong>.
+		<br>
+		Population: <strong> {{rCountry['population']}} people </strong>
+		<br>
+		Capital : <strong> {{rCountry['capital']}} </strong>
+	</p>
+	<hr>
+  {% if countries %}
+    {% for country in countries %}
+      <h4> {{country['name']}} </h4>
+			<p>
+				Population: <strong> {{country['population']}} people</strong>
+				<br>
+				Capital : <strong> {{country['capital']}} </strong>
+			</p>
+      <hr>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>
