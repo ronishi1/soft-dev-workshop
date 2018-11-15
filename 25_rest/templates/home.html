@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESTing up!</title>
+</head>
+<body>
+	<h1>Films by Studio Ghibli!</h1>
+  {% if films %}
+    {% for film in films %}
+      <h2> {{film['title']}} </h2>
+      <h4> Released: {{film['release_date']}} </h4>
+      <p> {{film['description']}} </p>
+      <hr>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>
